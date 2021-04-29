@@ -24,7 +24,7 @@
 const St = imports.gi.St;
 const Gio = imports.gi.Gio;
 const GLib = imports.gi.GLib;
-const GObject = imports.gi.GObject;
+const GObject = imports.gi.Gtk; //for Gnome40
 const Shell = imports.gi.Shell;
 const Atk = imports.gi.Atk;
 
@@ -253,8 +253,10 @@ var Lidsleep = class Lidsleep extends PanelMenu.Button {
 };
 
 // For shell version > 3.30 re-wrapping our subclass in `GObject.registerClass()`
-if (ShellVersion > 30) {
-    Lidsleep = GObject.registerClass(
+//changed to for shell version >= 40.0
+const GOb = imports.gi.GObject;
+if (ShellVersion >= 0) {
+    Lidsleep = GOb.registerClass(
         {GTypeName: IndicatorName},
         Lidsleep
     );
