@@ -24,7 +24,7 @@
 const St = imports.gi.St;
 const Gio = imports.gi.Gio;
 const GLib = imports.gi.GLib;
-const GObject = imports.gi.Gtk; //for Gnome40
+const GObject = imports.gi.Gtk;
 const Shell = imports.gi.Shell;
 const Atk = imports.gi.Atk;
 
@@ -244,17 +244,15 @@ var Lidsleep = class Lidsleep extends PanelMenu.Button {
             this._display.disconnect(this._windowCreatedId);
             this._windowCreatedId = 0;
         }
-        if (this._windowDestroyedId) {
+        if (this._windowDestroyedId) {G
             global.window_manager.disconnect(this._windowDestroyedId);
             this._windowDestroyedId = 0;
         }
         super.destroy();
     }
 };
-
-// For shell version > 3.30 re-wrapping our subclass in `GObject.registerClass()`
-//changed to for shell version >= 40.0
 const GOb = imports.gi.GObject;
+// For shell version > 3.30 re-wrapping our subclass in `GObject.registerClass()`
 if (ShellVersion >= 0) {
     Lidsleep = GOb.registerClass(
         {GTypeName: IndicatorName},
@@ -270,7 +268,7 @@ function init(extensionMeta) {
     else
         Convenience.initTranslations();
 
-    let theme = imports.gi.Gtk.IconTheme.get_default();
+    let theme = imports.gi.Gtk.IconTheme.get_default()
     theme.append_search_path(extensionMeta.path + "/icons");
 }
 
