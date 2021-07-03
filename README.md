@@ -2,6 +2,7 @@
 
 ## gnome-shell-extension-slidsleep
 ## CAUTION Still an experimental and unstable version. Can freeze gnome-shell
+## Doesn't seem to work in wayland
 
 When the moon is full auto suspend at lid close is disable.
 
