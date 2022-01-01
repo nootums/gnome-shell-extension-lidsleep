@@ -13,5 +13,5 @@
   "settings-schema": "org.gnome.shell.extensions.lidsleep",
   "gettext-domain": "gnome-shell-extension-lidsleep",
   "description": "Disable the auto suspend when lid is closed",
-  "url": "https://github.com/pablotor/gnome-shell-extension-lidsleep"
+  "url": "https://github.com/nootums/gnome-shell-extension-lidsleep"
 }
